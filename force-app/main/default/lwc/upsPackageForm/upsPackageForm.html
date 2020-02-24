@@ -1,0 +1,77 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <div class="slds-align_absolute-center slds-text-heading_small">Package</div>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-layout class="slds-align_absolute-center">
+                <lightning-layout-item padding="horizontal-medium" size="12" medium-device-size="8" 
+                    large-device-size="6">
+                    <lightning-combobox
+                        name="packaging-type"
+                        label="Packaging Type"
+                        value={packagingType}
+                        options={packagingTypePicklist.data}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-align_absolute-center" multiple-rows="true">
+                <lightning-layout-item padding="horizontal-medium" size="12" medium-device-size="12" 
+                    large-device-size="6">
+                    <lightning-layout class="slds-align_absolute-center" multiple-rows="true">
+                        <lightning-layout-item padding="around-medium" size="12" 
+                            medium-device-size="8" large-device-size="8">
+                            <lightning-input class="weight" type="text" label="Weight" 
+                                onchange={handleChange} required>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-medium" size="12" 
+                            medium-device-size="4" large-device-size="4">
+                            <lightning-combobox
+                                name="weight-unit"
+                                label="Weight Unit"
+                                value={unitOfMeasurementWeight}
+                                options={weightOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item padding="horizontal-medium" size="12" 
+                    medium-device-size="12" large-device-size="6">
+                    <lightning-layout class="slds-align_absolute-center" multiple-rows="true">
+                        <lightning-layout-item padding="around-medium" size="12" 
+                            medium-device-size="3" large-device-size="3">
+                            <lightning-input class="length" type="text" label="Length" 
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-medium" size="12" 
+                            medium-device-size="3" large-device-size="3">
+                            <lightning-input class="width" type="text" label="Width" 
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-medium" size="12"
+                            medium-device-size="3" large-device-size="3">
+                            <lightning-input class="height" type="text" label="Height" 
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="horizontal-medium" size="12" 
+                            medium-device-size="3" large-device-size="3">
+                            <lightning-combobox
+                                name="length-unit"
+                                label="Length Unit"
+                                value={unitOfMeasurementLength}
+                                options={lengthOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UPS Rate Calculator</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="defaultUnitOfMeasurement" label="Default Unit of Measurement" 
+                type="String" datasource="apex://UnitOfMeasurementPickList"/>
+            <property name="fromHeaderLabel" label="From Header Label" type="String" 
+                default="From"/>
+            <property name="toHeaderLabel" label="To Header Label" type="String" 
+                default="To"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <div class="slds-align_absolute-center slds-text-heading_small">Rates</div>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-layout if:true={rates} multiple-rows="true">
+                    <template if:true={ratedShipmentIsArray} 
+                        for:each={ratesResponse.RateResponse.RatedShipment} 
+                        for:item="ratedShipment">
+                        <lightning-layout-item key={ratedShipment.Service.Code} size="12">
+                            <c-ups-rate-list-item key={ratedShipment.Service.Code} 
+                                rate={ratedShipment}>
+                            </c-ups-rate-list-item>
+                        </lightning-layout-item>
+                    </template>
+                    <lightning-layout-item if:true={ratedShipmentIsNotArray} size="12">
+                        <c-ups-rate-list-item rate={ratesResponse.RateResponse.RatedShipment}>
+                        </c-ups-rate-list-item>
+                    </lightning-layout-item>
+            </lightning-layout>
+            <div if:true={errors}>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={ratesResponse.response.errors} for:item="error">
+                        <lightning-layout-item key={error.code} size="12">
+                            <lightning-layout class="slds-align_absolute-center">
+                                <lightning-layout-item class="error-background" size="3">
+                                    <div>Error Code: {error.code}</div>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="error-background" size="6">
+                                    <div>{error.message}</div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </div>
+        </div>
+    </lightning-card>
+</template>

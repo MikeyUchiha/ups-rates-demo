@@ -1,0 +1,31 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center" multiple-rows="true">
+        <lightning-layout-item padding="around-medium" size="12" medium-device-size="6" 
+            large-device-size="5">
+            <c-ups-address-form header={fromHeaderLabel}></c-ups-address-form>
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-medium" size="12" medium-device-size="6" 
+            large-device-size="5">
+            <c-ups-address-form header={toHeaderLabel}></c-ups-address-form>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-p-top_medium" padding="horizontal-medium" size="12" 
+            medium-device-size="12" large-device-size="10">
+            <c-ups-package-form default-unit-of-measurement={defaultUnitOfMeasurement}>
+            </c-ups-package-form>
+        </lightning-layout-item>
+        <lightning-layout-item if:true={ratesResponse} class="slds-p-top_medium" 
+            padding="horizontal-medium" size="12" medium-device-size="12" large-device-size="10">
+            <c-ups-rate-list rates-response={ratesResponse}></c-ups-rate-list>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout class="slds-align_absolute-center">
+        <lightning-layout-item padding="around-medium">
+            <lightning-button
+                variant="brand"
+                label="Get Rates"
+                title="Get Rates"
+                onclick={handleClick}>
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

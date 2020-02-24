@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12">
+            <lightning-layout class="slds-align_absolute-center">
+                <lightning-layout-item class="error-background" size="6" medium-device-size="3">
+                    <div>{rate.Service.Description}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="error-background" size="3" medium-device-size="1">
+                    <div>
+                        <lightning-formatted-number value={rate.TotalCharges.MonetaryValue} format-style="currency"
+                            currency-code={rate.TotalCharges.CurrencyCode}>
+                        </lightning-formatted-number>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+    <div></div>
+</template>

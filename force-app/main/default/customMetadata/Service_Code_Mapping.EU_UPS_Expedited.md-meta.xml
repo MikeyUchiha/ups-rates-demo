@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>EU - UPS Expedited</label>
+    <protected>false</protected>
+    <values>
+        <field>Country_Type__c</field>
+        <value xsi:type="xsd:string">European Union</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">UPS Expedited</value>
+    </values>
+    <values>
+        <field>Service_Code__c</field>
+        <value xsi:type="xsd:string">08</value>
+    </values>
+</CustomMetadata>
